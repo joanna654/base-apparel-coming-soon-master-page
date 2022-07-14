@@ -1,0 +1,66 @@
+$color-brown: #423a3a;
+$color-pink-pastel: #ce9898;
+$color-pink: #ee8b8b;
+$color-white: #ffffff;
+$color-linear-white: hsl(0, 100%, 96%);
+$color-linear-white-2: hsl(0, 100%, 86%);
+$color-linear-light-red: hsl(0, 80%, 86%);
+$color-linear-red: hsl(0, 74%, 74%);
+$color-red: #f96464;
+
+@mixin for-size($size) {
+  @if $size == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // color: $color-brown;
+}
+
+html {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 62.5%;
+  @include for-size(phone) {
+    font-size: 58%;
+  }
+}
+.content-span-pink {
+  color: $color-pink-pastel;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 6.4rem;
+  line-height: 6.4rem;
+  letter-spacing: 1.73rem;
+}
+
+.content-span {
+  color: $color-brown;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 6.4rem;
+  line-height: 7.1rem;
+  letter-spacing: 1.73rem;
+}
+
+.content-description {
+  color: $color-pink-pastel;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  @include for-size(phone) {
+    text-align: center;
+    line-height: 2.2rem;
+    padding: 3.2rem;
+  }
+}
+h1 {
+  @include for-size(phone) {
+    text-align: center;
+  }
+}
